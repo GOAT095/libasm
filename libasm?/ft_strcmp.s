@@ -5,10 +5,10 @@ _ft_strcmp:
 	xor		rcx, rcx
 nextchar:
 	mov bl, [rdi + rcx]
-	cmp bl,	0x0
-	je return
+	cmp bl,	0
 	mov dl, [rsi + rcx]
-	cmp dl, 0x0
+	je return
+	cmp dl, 0
 	je return
 	cmp bl, dl
 	jne return
