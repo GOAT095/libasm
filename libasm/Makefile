@@ -1,11 +1,7 @@
 NAME = libasm.a
 
-SRCS =	ft_strlen.s \
-		ft_strcpy.s \
-		ft_strcmp.s \
-		ft_write.s	\
-		ft_read.s	\
-		ft_strdup.s
+SRCS =	ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s \
+		ft_read.s ft_strdup.s
 
 OBJS = $(SRCS:.s=.o)
 
@@ -18,7 +14,7 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) *.out
 
 try: all
 	gcc -Wall -Wextra -Werror -I./libasm.h libasm.a main.c -o $(NAME)
