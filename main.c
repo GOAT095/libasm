@@ -41,16 +41,16 @@ int     main()
 	STRCMP(s1, s2);
 	printf("\033[0;32mft_write TEST\033[0m\n");
 	ft_write(1, "hello\n", 6);
-	fd = open("test.txt", O_WRONLY);
+	fd = open("test", O_WRONLY);
 	ft_write(fd, "hello\n", 6);
-	if ((ft_write(10, "hello\n", 6) == -1))
+	if ((ft_write(-4, "hello\n", 6) == -1))
 		perror("error");
 	printf("%d\n", (int)ft_write(1, "hello\n", 6));
 	close(fd);
 	printf("\033[0;32mft_read TEST\033[0m\n");
 	ft_read(0, buf, 20);
 	bzero(buf, 20);
-	printf("%s", "test dyal test file");
+	printf("%s", "test dyal test file\n");
 	fd = open("test", O_RDONLY);
 	ft_read(fd, buf, 7);
 	printf("%s\n", buf);
