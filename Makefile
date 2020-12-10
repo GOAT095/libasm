@@ -5,7 +5,7 @@ SRCS =	ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s \
 
 OBJS = $(SRCS:.s=.o)
 
-#LIB = -L -lasm
+LIB = -L -lasm
 
 %.o	: %.s
 	nasm -f macho64 $< -o $@
@@ -15,13 +15,13 @@ $(flags): -Wall -Werror -Wextra
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-all: $(NAME) #$(LIB)
+all: $(NAME)
 
 clean:
 	rm -f $(OBJS) *.out
 
 run:
-	gcc $(flags) main.c libasm.a ; ./a.out
+	gcc $(flags) main.c libasm.a $(LIB); ./a.out
 
 fclean: clean
 	rm -f $(NAME)
