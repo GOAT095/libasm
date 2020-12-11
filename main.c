@@ -50,7 +50,7 @@ int     main()
 		close(fd);
 	printf("\033[0;32mft_read TEST\033[0m\n");
 	ft_read(0, buf, 20);
-	bzero(buf, 20);
+	bzero(buf, 20); ////
 	fd = open("test", O_RDONLY);
 	ft_read(fd, buf, 7);
 	printf("%s\n", buf);
