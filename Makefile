@@ -3,12 +3,14 @@ NAME = libasm.a
 SRCS =	ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s \
 		ft_read.s ft_strdup.s
 
+NASM = nasm -f macho64
+
 OBJS = $(SRCS:.s=.o)
 
 LIB = -L -lasm
 
 %.o	: %.s
-	nasm -f macho64 $< -o $@
+	 $(NASM) $<
 
 $(flags): -Wall -Werror -Wextra
 
