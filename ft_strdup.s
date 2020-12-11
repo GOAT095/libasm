@@ -23,7 +23,6 @@ _ft_strdup:
 
 _error:
 	call ___error
-	mov rdi, 12		; rdi yakhod code d error 12
-	mov [rax], rdi	; rax ayakhod adress dyal rdi li fih code d error 12
-	mov rax, 0		; return NULL
+	mov [rax], BYTE 12	; rax ayakhod adress dyal rdi li fih code d error 12
+	mov rax, 0			; return NULL
 	ret

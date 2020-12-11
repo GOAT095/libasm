@@ -44,7 +44,7 @@ int     main()
 	fd = open("test", O_WRONLY);
 	ft_write(fd, "hello\n", 6);
 	if ((ft_write(-4, "hello\n", 6) == -1))
-		perror("error");
+		printf("\033[1;31mERROR: %s\033[0m\n", strerror(errno));
 	printf("%d\n", (int)ft_write(1, "hello\n", 6));
 	if (fd)
 		close(fd);
@@ -55,12 +55,12 @@ int     main()
 	ft_read(fd, buf, 7);
 	printf("%s\n", buf);
 	if ((ft_read(-4, buf, 6) == -1))
-		perror("error");
+		printf("\033[1;31mERROR: %s\033[0m\n", strerror(errno));
 	printf("%d\n", (int)ft_read(0, buf, 20));
 	if (fd)
 		close(fd);
 	printf("\033[0;32mft_strdup TEST\033[0m\n");
 	STRDUP("");
 	STRDUP("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
-    return 0;
+	return 0;
 }
