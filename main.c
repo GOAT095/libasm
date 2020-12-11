@@ -1,7 +1,7 @@
 #include "libasm.h"
 # define STRLEN(x) (printf("%s\nft_strlen : %lu\nstrlen : %lu\n", x, ft_strlen(x), strlen(x)))
 # define STRCMP(x, y) (printf("%s | %s\nftstrcmp : %d\nstrcmp : %d\n", x, y, ft_strcmp(x, y), strcmp(x, y)))
-# define STRDUP(x) (printf("%s\nft_strdup : %s\nstrdup : %s\n", x, ft_strdup(x), strdup(x)))
+# define STRDUP(x) (printf("%s\nft_strdup\n : %s\nstrdup\n : %s\n", x, ft_strdup(x), strdup(x)))
 int     main()
 {
 	char *s1,*s2;
@@ -46,18 +46,19 @@ int     main()
 	if ((ft_write(-4, "hello\n", 6) == -1))
 		perror("error");
 	printf("%d\n", (int)ft_write(1, "hello\n", 6));
-	close(fd);
+	if (fd)
+		close(fd);
 	printf("\033[0;32mft_read TEST\033[0m\n");
 	ft_read(0, buf, 20);
 	bzero(buf, 20);
-	printf("%s", "test dyal test file\n");
 	fd = open("test", O_RDONLY);
 	ft_read(fd, buf, 7);
 	printf("%s\n", buf);
 	if ((ft_read(-4, buf, 6) == -1))
 		perror("error");
 	printf("%d\n", (int)ft_read(0, buf, 20));
-	close(fd);
+	if (fd)
+		close(fd);
 	printf("\033[0;32mft_strdup TEST\033[0m\n");
 	STRDUP("");
 	STRDUP("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");

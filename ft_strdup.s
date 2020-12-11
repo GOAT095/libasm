@@ -14,13 +14,11 @@ _ft_strdup:
 	mov rdi, rax
 	call _malloc	; allocation dyal rax size
 	cmp rax, 0
-	jz _error		; ila failat malloc
+	je _error		; ila failat malloc
 	pop rdi			; recuperation rdi
-	push rsi		; hada 2nd param li ghadi ytcopa f rdi
 	mov rsi, rdi
 	mov rdi, rax
 	call _ft_strcpy
-	pop rsi			
 	ret
 
 _error:
