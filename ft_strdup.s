@@ -9,8 +9,8 @@ _ft_strdup:
 	cmp rdi, 0		; ila parametre ja khawi
 	jz _error
 	call _ft_strlen
-	inc rax 		; rax+1 to null terminate the string
-	push rdi		; had bach maydi3ch rdi kan saviwh f stack
+	inc rax
+	push rdi
 	mov rdi, rax
 	call _malloc	; allocation dyal rax size
 	cmp rax, 0

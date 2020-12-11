@@ -21,7 +21,7 @@ clean:
 	rm -f $(OBJS) *.out
 
 run:
-	gcc $(flags) main.c libasm.a $(LIB); ./a.out
+	gcc $(flags) $(LIB) main.c libasm.a ; ./a.out
 
 fclean: clean
 	rm -f $(NAME)
