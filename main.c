@@ -41,23 +41,21 @@ int     main()
 	STRCMP(s1, s2);
 	printf("\033[0;32mft_write TEST\033[0m\n");
 	ft_write(1, "hello\n", 6);
-	fd = open("test", O_WRONLY);
-	ft_write(fd, "hello\n", 6);
+	fd = open("file", O_WRONLY);
+	ft_write(fd, "DGoat\n", 6);
 	if ((ft_write(-4, "hello\n", 6) == -1))
 		printf("\033[1;31mERROR: %s\033[0m\n", strerror(errno));
 	printf("%d\n", (int)ft_write(1, "hello\n", 6));
-	if (fd)
 		close(fd);
 	printf("\033[0;32mft_read TEST\033[0m\n");
 	ft_read(0, buf, 20);
-	bzero(buf, 20); ////
-	fd = open("test", O_RDONLY);
+	bzero(buf, 20);
+	fd = open("file", O_RDONLY);
 	ft_read(fd, buf, 7);
 	printf("%s\n", buf);
 	if ((ft_read(-4, buf, 6) == -1))
 		printf("\033[1;31mERROR: %s\033[0m\n", strerror(errno));
 	printf("%d\n", (int)ft_read(0, buf, 20));
-	if (fd)
 		close(fd);
 	printf("\033[0;32mft_strdup TEST\033[0m\n");
 	STRDUP("");

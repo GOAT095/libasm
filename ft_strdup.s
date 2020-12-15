@@ -23,6 +23,6 @@ _ft_strdup:
 
 _error:
 	call ___error
-	mov [rax], BYTE 12	; rax ayakhod adress dyal rdi li fih code d error 12
+	mov [rax], BYTE 12	; rax ayakhod adress dyal rdi li fih code d error 12 (dyal malloc)
 	mov rax, 0			; return NULL
 	ret
